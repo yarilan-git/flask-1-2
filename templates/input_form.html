@@ -1,0 +1,29 @@
+{% extends 'index.html' %} 
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="/convert" method="get">        
+        <div class="form_line">
+            <label class="form_element" for="from">Converting from</label>
+            <input class="form_element" type="text" name="from" required autofocus>
+        </div>
+        <div class="form_line">
+            <label class="form_element" for="to">Converting to</label>
+            <input class="form_element" type="text" name="to" required>
+        </div>
+        <div class="form_line">
+            <label class="form_element" for="amount">Amount</label>
+            <input class="form_element"type="number" name="amount" min="0.00" step="0.01" required>
+        </div>
+        <button class="form_line" type="submit">Convert</button>
+
+    </form>
+{% endblock %}

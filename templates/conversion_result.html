@@ -1,0 +1,14 @@
+{% extends 'index.html' %} 
+
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+
+
+    <form action="/" method="get">        
+        <div class="form_line">
+            <label id="result" class="form_element">The result is</label>{{result}}            
+        </div>
+        <button class="form_line" type="submit">Home</button>
+
+    </form>
+{% endblock %}
