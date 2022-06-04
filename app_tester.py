@@ -26,7 +26,7 @@ class tester(TestCase):
                 self.assertIn('The result is</label> $  1.00', response)
 
                 """ Test for an invalid source currency """
-                request = tester.get('/convert?from=usd&to=USD&amount=1')
+                request = tester.get('/convert?from=uuuu&to=USD&amount=1')
                 response = request.get_data(as_text=True)
                 self.assertIn('The source currency is not valid', response)
 
